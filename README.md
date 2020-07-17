@@ -1,6 +1,9 @@
 # Tests of MyStore shop
 ## Selenium WebDriver with Java And Cucumber
 
+> **Cucumber Scenario:**
+MyStore_Tests/src/test/resources/features
+
 
 
 > **Enviromen:**
