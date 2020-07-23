@@ -8,5 +8,4 @@ import org.junit.runner.RunWith;
         tags = "@buyInMyShop")
 
 public class RunCucumberTest {
-
 }

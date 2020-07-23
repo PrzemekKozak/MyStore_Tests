@@ -16,6 +16,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import javax.imageio.ImageIO;
 
 import static org.junit.Assert.*;
@@ -54,7 +55,7 @@ public class MyStoreBuySteps {
         MainPageMyStore mainPageMyStore = new MainPageMyStore(driver);
         mainPageMyStore.searchProduct(productName);
 
-        //if first searched product contains searched  text, then click it
+        //if first searched product contains searched text, then click it
         SearchPageMyStore searchPageMyStore = new SearchPageMyStore(driver);
         if (searchPageMyStore.getFullProductName().contains(productName.toLowerCase()))
             searchPageMyStore.chooseProduct();
@@ -65,15 +66,16 @@ public class MyStoreBuySteps {
         birdSweaterPage = new BirdSweaterPage(driver);
 
         //print in terminal regular price of product
-        System.out.println("Regular price is:" + birdSweaterPage.getRegularPrice());
+        System.out.println("Regular price is: €" + birdSweaterPage.getRegularPrice());
 
         //count expected new price by percent of discount and print it in terminal
-        double expectedNewPrice = birdSweaterPage.getRegularPrice() * (1 - discount * 0.01);
-        System.out.println("Expected price is:" + expectedNewPrice);
+        BigDecimal expectedNewPrice = birdSweaterPage.getRegularPrice().multiply(BigDecimal.ONE.subtract(new BigDecimal(discount).movePointLeft(2)));
+        System.out.println("Expected price is: €" + expectedNewPrice);
 
         //print actual price from page and compare it to expected price
-        System.out.println("Actual price is:" + birdSweaterPage.getNewPrice());
-        assertEquals(expectedNewPrice, birdSweaterPage.getNewPrice(), 0.01);
+        System.out.println("Actual price is: €" + birdSweaterPage.getNewPrice());
+        assertTrue(expectedNewPrice.compareTo(birdSweaterPage.getNewPrice()) == 0);
+
     }
 
     @When("User chooses size {string} and quantity {string}")

@@ -1,11 +1,15 @@
-# Tests of MyStore - online shop
-## (Selenium WebDriver with Java and Cucumber)
+# Automatic tests of MyStore - online shop
+## (Selenium WebDriver with Java, JUnit)
 
 
 
-### *The project includes two automatic tests of the online store functions:*
+### *The project includes three automatic tests of the online store functions:*
 
-**1. Test of adding a new address of a registered user and deleting an added address.**
+**1. Test of calculating the value of the order when purchasing a random product in a random quantity.**
+> Test definition:
+>[MyStore_Tests/src/test/java/tests/AddToCardTest.java](https://github.com/PrzemekKozak/MyStore_Tests/blob/master/src/test/java/tests/AddToCardTest.java)
+
+**2. Test of adding a new address of a registered user and deleting an added address.[Cucumber]**
 > Cucumber Scenario Outline:
 [MyStore_Tests/src/test/resources/features/addNewAddressMyStore.feature](https://github.com/PrzemekKozak/MyStore_Tests/blob/master/src/test/resources/features/addNewAddressMyStore.feature)
 
@@ -13,7 +17,7 @@
 [MyStore_Tests/src/test/java/steps_definitions/MyStoreAddressSteps.java](https://github.com/PrzemekKozak/MyStore_Tests/blob/master/src/test/java/steps_definitions/MyStoreAddressSteps.java)
 ___________________________________________________________________________________________________________________________________
 
-**2. Test of the full purchasing process with the ability to choose the quantity and size. [Page Factory and Page Object Model]**
+**3. Test of the full purchasing process with the ability to choose the quantity and size. [Cucumber, Page Factory and Page Object Model]**
 > *In addition, checking the correctness of the discount granted and making a print screen of the purchase confirmation.*
 
 > Cucumber Scenario:
