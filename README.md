@@ -6,6 +6,7 @@ The project includes three automatic tests of the online store functions:
 **1. Test of calculating the value of the order when purchasing a random product in a random quantity.**
 > Test definition:
 >[MyStore_Tests/src/test/java/tests/AddToCardTest.java](https://github.com/PrzemekKozak/MyStore_Tests/blob/master/src/test/java/tests/AddToCardTest.java)
+___________________________________________________________________________________________________________________________________
 
 **2. Test of adding a new address of a registered user and deleting an added address.[Cucumber]**
 > Cucumber Scenario Outline:
