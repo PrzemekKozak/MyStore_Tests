@@ -67,7 +67,7 @@ public class AddToCardTest {
                 String productName = driver.findElement(By.xpath("//h1[@itemprop='name']")).getText();
 
                 //displaying information about the selected product,  its quantity and total price
-                System.out.println("Product name: " + productName + ", price: €" + price + ", quantity: " + randomQuantity + ", cost: €" + productsCost);
+                System.out.println("Product name: " + productName + ", price: " + price + ", quantity: " + randomQuantity + ", cost: " + productsCost);
 
                 //summing up the value and quantity of all products
                 totalCost = totalCost.add(productsCost);
@@ -87,10 +87,10 @@ public class AddToCardTest {
         System.out.println("In cart we have: " + totalCart);
 
         //displaying information about real cost
-        System.out.println("Total quantity of all products: " + totalQuantity + " items." + "\nTotal cost of all products: €" + totalCost);
+        System.out.println("Total quantity of all products: " + totalQuantity + " items." + "\nTotal cost of all products: " + totalCost);
 
         //verification of the total quantity and price in the card
-        Assert.assertTrue(totalCart.contains("€" + totalCost.toString()));
+        Assert.assertTrue(totalCart.contains(totalCost.toString()));
         Assert.assertTrue(totalCart.contains(totalQuantity + " items"));
     }
 }

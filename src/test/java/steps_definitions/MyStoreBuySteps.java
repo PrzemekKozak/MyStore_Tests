@@ -66,14 +66,14 @@ public class MyStoreBuySteps {
         birdSweaterPage = new BirdSweaterPage(driver);
 
         //print in terminal regular price of product
-        System.out.println("Regular price is: €" + birdSweaterPage.getRegularPrice());
+        System.out.println("Regular price is: " + birdSweaterPage.getRegularPrice());
 
         //count expected new price by percent of discount and print it in terminal
         BigDecimal expectedNewPrice = birdSweaterPage.getRegularPrice().multiply(BigDecimal.ONE.subtract(new BigDecimal(discount).movePointLeft(2)));
-        System.out.println("Expected price is: €" + expectedNewPrice);
+        System.out.println("Expected price is: " + expectedNewPrice);
 
         //print actual price from page and compare it to expected price
-        System.out.println("Actual price is: €" + birdSweaterPage.getNewPrice());
+        System.out.println("Actual price is: " + birdSweaterPage.getNewPrice());
         assertTrue(expectedNewPrice.compareTo(birdSweaterPage.getNewPrice()) == 0);
 
     }
